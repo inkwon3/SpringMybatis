@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+C:\Users\karin\Desktop\folder\아이티뱅크 Spring\SpringWorkspace\SpringWorkspace\SpringMyBatis\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4219279280.index
+3874379659.index
+3100609005.index
+3820760849.index
+4262282420.index
+460424013.index
+32669171.index
+3467447113.index
+4005953615.index

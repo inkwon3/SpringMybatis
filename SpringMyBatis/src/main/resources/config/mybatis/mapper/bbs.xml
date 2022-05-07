@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bbs"><!-- 같은 테이블의 SQL문들을 구별하기위한 이름 -->
+
+<!-- SQL문 작성하는 파일 -->
+	<!-- 게시판 목록 -->
+	<select id="list" resultType="vo.BbsVO">
+		select * from bbs
+	</select>
+	
+	<!-- 글 내용 보기 -->
+	<select id="selectBbs" resultType="vo.BbsVO" parameterType="int">
+		select * from bbs where bbsID=#{bbsID}
+	</select>
+	
+	<!-- 글 수정 -->
+	<update id="updateBbs" parameterType="vo.BbsVO">
+	 	update bbs set bbsTitle=#{bbsTitle}, bbsContent=#{bbsContent}, bbsDate=SYSDATE() where bbsID=#{bbsID}
+	</update>
+
+	<delete id="deleteBbs" parameterType="int">
+		delete from bbs where bbsID=#{bbsID}
+	</delete>	
+	
+	<!-- selectbbsID -->
+	<select id="selectbbsID" resultType="int">
+		select MAX(bbsID)+1 from bbs
+	</select>
+	
+	<!-- 글 작성 -->
+	<insert id="insertBbs" parameterType="vo.BbsVO">
+		insert into bbs values(#{bbsID}, #{bbsTitle}, #{userID}, SYSDATE(), #{bbsContent}, NULL)
+	</insert>
+	
+</mapper>
+
